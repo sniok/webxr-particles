@@ -151,7 +151,7 @@ export function App() {
       <ambientLight />
       <DotsRender />
       <pointLight position={[10, 10, 10]} />
-      <color args={[0x000000]} attach="background" />
+      <color args={[0x000000] as any} attach="background" />
     </VRCanvas>
   )
 }
