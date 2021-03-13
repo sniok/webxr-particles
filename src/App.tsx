@@ -5,7 +5,7 @@ import React, { useMemo, useRef } from 'react'
 import { useFrame } from 'react-three-fiber'
 import { BufferGeometry, InterleavedBuffer, InterleavedBufferAttribute, Vector3 } from 'three'
 
-const count = 50_000
+const count = 40_000
 const stride = 10
 const total = count * stride
 const dots = new Float32Array(total)
@@ -141,17 +141,23 @@ function Dots() {
 
 export function App() {
   return (
-    <VRCanvas>
-      <DefaultXRControllers />
-      <Plane args={[55, 55, 25, 25]} rotation={[-Math.PI / 2, 0, 0]}>
-        <meshPhongMaterial color="#222" attach="material" wireframe />
-      </Plane>
-      <OrbitControls />
-      <Dots />
-      <ambientLight />
-      <DotsRender />
-      <pointLight position={[10, 10, 10]} />
-      <color args={[0x000000] as any} attach="background" />
-    </VRCanvas>
+    <>
+      <div id="intro">
+        <h1>WebXR Particles</h1>
+        <p>Hold trigger to pull particles</p>
+      </div>
+      <VRCanvas>
+        <DefaultXRControllers />
+        <Plane args={[55, 55, 25, 25]} rotation={[-Math.PI / 2, 0, 0]}>
+          <meshPhongMaterial color="#222" attach="material" wireframe />
+        </Plane>
+        <OrbitControls />
+        <Dots />
+        <ambientLight />
+        <DotsRender />
+        <pointLight position={[10, 10, 10]} />
+        <color args={[0x000000] as any} attach="background" />
+      </VRCanvas>
+    </>
   )
 }
