@@ -1,4 +1,4 @@
-import { DefaultXRControllers, Interactive, useXR, useXREvent, VRCanvas, XRController } from '@react-three/xr'
+import { DefaultXRControllers, Interactive, useXR, useXREvent, VRCanvas } from '@react-three/xr'
 import { Box, Plane } from 'drei/shapes'
 import { OrbitControls } from 'drei/OrbitControls'
 import { Text } from 'drei/Text'
